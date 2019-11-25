@@ -4,17 +4,27 @@ import './App.css';
 import logo from './logo.svg';
 
 class App extends React.Component {
-  public render() {
+  render() {
+    const logoOptions = {
+      alt: "logo",
+      className: "App-logo",
+      src: logo
+    };
+    const title = "こんにちは React";
+    const targets = ["Hello", "Kanae", "Yukina"];
+
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          {
+            // コメント
+          }
+          <img {...logoOptions} />
+          { title && <p>{title}</p>}
+          { targets.map(target => (
+            <p>Hello, {targets}!</p>
+          ))}
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-          Hello, World!
-        </p>
       </div>
     );
   }
